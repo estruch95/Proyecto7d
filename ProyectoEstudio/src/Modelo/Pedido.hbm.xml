@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 13-feb-2016 17:53:25 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+
+    <class name="Modelo.Pedido" table="Pedidos">
+        <id name="id" type="int">
+            <column name="ID" />
+            <generator class="increment" />
+        </id>
+        
+        <property name="fecha" type="java.sql.Date">
+            <column name="Fecha" />
+        </property>
+        
+        <many-to-one name="empresa" class="Modelo.Empresa" not-null="true">
+            <column name="Empresa" />
+        </many-to-one>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 13-feb-2016 17:53:25 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+
+    <class name="Modelo.Direccion" table="Direccion">
+        <id name="id" type="int">
+            <column name="ID" />
+            <generator class="increment">
+            	<param name="property">My property</param>
+            </generator>
+        </id>
+        
+        <property name="calle" type="java.lang.String">
+            <column name="Calle" />
+        </property>
+        
+        <property name="poblacion" type="java.lang.String">
+            <column name="Poblacion" />
+        </property>
+        
+        <property name="cp" type="int">
+            <column name="cp" />
+        </property>
+        
+        <one-to-one name="empresa" class="Modelo.Empresa" property-ref="direccion"/>
+    </class>
+</hibernate-mapping>
